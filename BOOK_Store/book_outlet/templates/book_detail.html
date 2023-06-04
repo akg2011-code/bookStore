@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container px-4 py-5" id="icon-grid">
+    <h2 class="pb-2 border-bottom"><b>{{ book.title }}</b></h2>
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
+      <div class="col d-flex align-items-start">
+        <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em">
+          <use xlink:href="#bootstrap"></use>
+        </svg>
+        <div>
+          <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Book title</h3>
+          <p>{{ book.title }}</p>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em">
+          <use xlink:href="#cpu-fill"></use>
+        </svg>
+        <div>
+          <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Book Author</h3>
+          <p>{{ book.author }}</p>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em">
+          <use xlink:href="#calendar3"></use>
+        </svg>
+        <div>
+          <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Book Rating</h3>
+          <p>
+            <button class="btn btn-warning rounded-pill px-3" type="button"><b>{{ book.rating }}</b></button>
+          </p>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em">
+          <use xlink:href="#home"></use>
+        </svg>
+        <div>
+          <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Book best selling</h3>
+          <p>
+            {% if book.is_bestselling %}
+              <button class="btn btn-success rounded-pill px-3" type="button">yes</button>
+            {% else %}
+              <button class="btn btn-danger rounded-pill px-3" type="button">no</button>
+            {% endif %}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

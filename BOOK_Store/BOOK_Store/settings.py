@@ -55,7 +55,9 @@ ROOT_URLCONF = 'BOOK_Store.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / "book_outlet/templates/book_outlet",
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
