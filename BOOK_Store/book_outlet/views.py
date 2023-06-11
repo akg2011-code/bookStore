@@ -7,9 +7,9 @@ def index(request):
     books = Book.objects.all()
     return render(request, "index.html", {"books": books})
 
-def book_details(request, pk):
+def book_detail(request, slug):
     try:
-        book = Book.objects.get(pk=pk)
+        book = Book.objects.get(slug=slug)
     except:
         raise Http404()
     return render(request, "book_detail.html", {"book": book})    
